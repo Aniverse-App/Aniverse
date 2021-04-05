@@ -11,7 +11,7 @@ Original App Design Project - README Template
 
 ## Overview
 ### Description
-[This app populates a list of Anime and Manga that includes the dates the anime/manga were released, a description of Anime/Manga, and a link to where you can watch the anime.]
+[This app populates a list of Anime, Manga, and Characters which includes all the information about them. The ability to open a discussion about an anime the user is watching, the manga they are reading, or a character they are interested in. This app also allows the user to view the anime or read the manga within the app.]
 
 ### App Evaluation
 [Evaluation of your app across the following attributes]
@@ -27,28 +27,32 @@ Original App Design Project - README Template
 ### 1. User Stories (Required and Optional)
 
 **Required Must-have Stories**
-* [User can view a list of anime and manga.]
-* [User must be able to search the anime or manga that interests them.]
-* [There must be a toolbar that organizes the data into various pages]
+* [User can view a list of anime/manga/characters]
+* [User must be able to search for the anime/manga/character that interests them]
+* [There must be a navigation bar that organizes the data into various screens]
 * [User can Log In and Sign Up]
-* [User can save their favorite anime or manga.]
+* [User can save/unsave their favorite anime/manga.]
     * [The saved anime/manga will appear in the user's profile.] 
-* [The user should be able to add or remove an anime or manga from their favorite list]
-* [When clicking on the anime/manga details of it should appear on its page.]
-* [User will be able to watch the Anime/Manga by clicking a button opening it on another page within the app.] 
-* [User will be able to start a discussion on the anime or manga they are watching]
+* [When clicking on the anime/manga details of it should appear in another tab.]
+* [User must be able to watch the Anime within the app.] 
+* [User must be able to read the Manga within the app.]
+* [User must be able to learn about a Character within the app.]
+* [User must be able to open a discussion on the anime they are watching, the manga they are reading, or a character they like/dislike.]
+* [Allow the logged in user to add a profile photo] 
+* [Display the profile photo with each post] 
+* [Tapping on a post's username or profile photo goes to that user's profile page and shows a grid view of the user's posts]
 
 **Optional Nice-to-have Stories**
-* [User will be able to comment under each anime/manga.]
+* [User will be able to leave a review of the anime they watched.]
+* [User will be able to leave a review of the manga they read.]
 * [User can give a rating to the anime/manga out of 5 Stars]
 * [Anime/Manga will be categorized for the results to be filtered]
+* [For new users a screen shows up asking the user for the category if anime/manga they are into and the list will be populated with those types of anime/manga]
 
 ### 2. Screen Archetypes
 
 * [Login/Sign Up Screen]
    * [User can Log In or Create a new Account]
-* [Anime/Manga List]
-   * [User can view a list of anime/manga]
 * [Anime List]
    * [User can view a list of anime]
 * [Anime Details Screen]
@@ -57,20 +61,24 @@ Original App Design Project - README Template
    * [User can view a list of manga]
 * [Manga Details Screen]
     * [When clicking on the Manga a more detailed view of the Manga will appear along with the option to read the manga]
+* [Character List]
+   * [User can view a list of characters]
+* [Character Details Screen]
+    * [When clicking on the Character a more detailed view of the Character will appear with all the information about this character]
 * [Search]
-   * [User can search for an anime or manga]
+   * [User can search for an anime/manga/character]
 * [Discussion Screen]
-    * [User can start a discussion about an anime they are watching or a manga they are reading]
+    * [User can start a discussion about an anime they are watching or a manga they are reading or a character they like/dislike]
 * [Profile Screen]
-    * [User can view the anime/manga they favorited in their screen]
+    * [User can view the anime/manga they favorited in their screen along with any comments they have made and discusssions they have started]
 
 ### 3. Navigation
 
 **Tab Navigation** (Tab to Screen)
 
-* [Home Feed]
 * [Anime List]
 * [Manga List]
+* [Character List]
 * [Search]
 * [Discussion]
 * [Profile]
@@ -79,8 +87,6 @@ Original App Design Project - README Template
 
 * [Log In/Sign Up Screen]
    * [Home]
-* [Home Screen]
-   * [A list of Anime/Manga]
 * [Anime Screen]
     * [A list of Anime]
 * [Anime Data Screen]
@@ -89,12 +95,16 @@ Original App Design Project - README Template
     * [A list of Manga]
 * [Manga Data Screen]
     * [The information about a particular manga and the ability to read it]
+* [Character Screen] 
+    * [A list of Characters]
+* [Character Data Screen]
+    * [The information about a particular character with all the information about them.]
 * [Search Screen]
     * [A search bar where the user can find an Anime or Manga]
 * [Discussion]
     * [A list of discussion about an anime or manga a user watched]
 * [Profile Screen]
-    * [Information about the user. Their favorited anime/manga and comments they've posted]
+    * [Information about the user. Their favorited anime/manga, comments they've posted, and discussions they have started]
 
 ## Wireframes:
 
@@ -109,9 +119,67 @@ width=600>
 width=600>
 
 ## Schema 
-[This section will be completed in Unit 9]
 ### Models
-[Add table of models]
+Model: Login Screen
+| Property  |      Type       |                Description                |
+|:---------:|:---------------:|:-----------------------------------------:|
+|  Username  | String|  Gets the username of the account.   |
+|   Password   |      String     | Gets the Username of the account |
+
+Model: Anime screen
+| Property  |      Type       |                Description                |
+|:---------:|:---------------:|:-----------------------------------------:|
+|  Anime name   | String |          Gets the title of the anime          |
+|   Anime picture   |      File       | Gets the picture of the anime |
+
+Model: Anime Details Screen
+| Property  |      Type       |                Description                |
+|:---------:|:---------------:|:-----------------------------------------:|
+|  Title   | String|  Gets the Title of anime |
+|   Anime description  |      String     | Description of what the anime is about |
+|  Reviews | String|  A comment posted by a user on the Anime.      |
+|   Episodes |      Int    | A list of episodes |
+|  Video| N/A| A list of Promotional Videos & episodes |
+|   Date aired| DateTime | Tell the user when the anime aired if it is still going or ended at a certain date |
+
+Model: Manga Screen
+| Property  |      Type       |                Description                |
+|:---------:|:---------------:|:-----------------------------------------:|
+|  Manga name   | String |          Gets the title of the manga          |
+|   Manga picture   |      File       | Gets the picture of the manga |
+
+Model: Manga Details Screen
+| Property  |      Type       |                Description                |
+|:---------:|:---------------:|:-----------------------------------------:|
+|  Title   | String|  Gets the title of the manga |
+|   Manga description   |      String     | Description of what the manga is about. |
+|  Reviews | String|  A comment posted by a user on the Manga     |
+|   Date Published| DateTime | Tell the user when the manga was published|
+
+Model: Discussion Screen
+| Property  |      Type       |                Description                |
+|:---------:|:---------------:|:-----------------------------------------:|
+|  UserId   | Pointer to user |          Unique id for the user           |
+|  UserImage   | File |          Profile Image for the user           |
+|   Image   |      File       | If users want to add images to their post |
+|   Text    |     String      |  If users want to add text to their post  |
+| CreatedAt |    DateTime     |         Date when post is created         |
+|UpdatedAt| DateTime| Date for when the post was updated|
+|Like Counter| Number| How many likes a post has|
+
+Model: Search Screen
+| Property  |      Type       |                Description                |
+|:---------:|:---------------:|:-----------------------------------------:|
+|  Searchbar | String| Specify what to search. The title of an anime/manga.   |
+
+Model:Profile Screen
+| Property  |      Type       |                Description                |
+|:---------:|:---------------:|:-----------------------------------------:|
+|  Image   | File |  Shows the user’s profile picture         |
+|   Comments   |      String     | The list of discussions started by the user |
+|  Discussions  | String|  The list of discussions started by the user      |
+|   Favorites  |      String     | The list of favorites in a list |
+
 ### Networking
 - [Add list of network requests by screen ]
 - [Create basic snippets for each Parse network request]
