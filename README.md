@@ -172,7 +172,7 @@ Model: Search Screen
 |:---------:|:---------------:|:-----------------------------------------:|
 |  Searchbar | String| Specify what to search. The title of an anime/manga.   |
 
-Model:Profile Screen
+Model: Profile Screen
 | Property  |      Type       |                Description                |
 |:---------:|:---------------:|:-----------------------------------------:|
 |  Image   | File |  Shows the user’s profile picture         |
