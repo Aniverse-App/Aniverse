@@ -120,43 +120,44 @@ width=600>
 
 ## Schema 
 ### Models
-Model: Login Screen
+Model:Login Screen
 | Property  |      Type       |                Description                |
 |:---------:|:---------------:|:-----------------------------------------:|
 |  Username  | String|  Gets the username of the account.   |
 |   Password   |      String     | Gets the Username of the account |
 
-Model: Anime screen
+Model:Anime screen
 | Property  |      Type       |                Description                |
 |:---------:|:---------------:|:-----------------------------------------:|
 |  Anime name   | String |          Gets the title of the anime          |
 |   Anime picture   |      File       | Gets the picture of the anime |
 
-Model: Anime Details Screen
+Model:Anime Details Screen
 | Property  |      Type       |                Description                |
 |:---------:|:---------------:|:-----------------------------------------:|
 |  Title   | String|  Gets the Title of anime |
-|   Anime description  |      String     | Description of what the anime is about |
+|   Synopsis  |      String     | Description of what the anime is about |
 |  Reviews | String|  A comment posted by a user on the Anime.      |
 |   Episodes |      Int    | A list of episodes |
 |  Video| N/A| A list of Promotional Videos & episodes |
-|   Date aired| DateTime | Tell the user when the anime aired if it is still going or ended at a certain date |
+|   Start Date| DateTime | Tell the user when the anime aired |
+|   End Date| DateTime | Tell the user when the anime stopped airing |
 
-Model: Manga Screen
+Model:Manga Screen
 | Property  |      Type       |                Description                |
 |:---------:|:---------------:|:-----------------------------------------:|
 |  Manga name   | String |          Gets the title of the manga          |
 |   Manga picture   |      File       | Gets the picture of the manga |
 
-Model: Manga Details Screen
+Model:Manga Details Screen
 | Property  |      Type       |                Description                |
 |:---------:|:---------------:|:-----------------------------------------:|
 |  Title   | String|  Gets the title of the manga |
-|   Manga description   |      String     | Description of what the manga is about. |
+|   Synopsis   |      String     | Description of what the manga is about. |
 |  Reviews | String|  A comment posted by a user on the Manga     |
 |   Date Published| DateTime | Tell the user when the manga was published|
 
-Model: Discussion Screen
+Model:Discussion Screen
 | Property  |      Type       |                Description                |
 |:---------:|:---------------:|:-----------------------------------------:|
 |  UserId   | Pointer to user |          Unique id for the user           |
@@ -167,12 +168,12 @@ Model: Discussion Screen
 |UpdatedAt| DateTime| Date for when the post was updated|
 |Like Counter| Number| How many likes a post has|
 
-Model: Search Screen
+Model:Search Screen
 | Property  |      Type       |                Description                |
 |:---------:|:---------------:|:-----------------------------------------:|
 |  Searchbar | String| Specify what to search. The title of an anime/manga.   |
 
-Model: Profile Screen
+Model:Profile Screen
 | Property  |      Type       |                Description                |
 |:---------:|:---------------:|:-----------------------------------------:|
 |  Image   | File |  Shows the user’s profile picture         |
@@ -181,6 +182,48 @@ Model: Profile Screen
 |   Favorites  |      String     | The list of favorites in a list |
 
 ### Networking
-- [Add list of network requests by screen ]
+* Discussion Screen
+    * (Create/POST) Create a new post object
+    * (Read/GET) Query all posts where user is author
+    * (Create/POST) Create a new like on a post
+    * (Delete) Delete existing like
+    * (Create/POST) Create a new comment on a post
+    * (Delete) Delete existing comment]
+    * (Create/POST) Add a new image on a post
+    * (Delete) Delete existing image
+
+* Profile Screen
+    * (Read/GET) Query logged in user object
+    * (Update/PUT) Update user profile image
 - [Create basic snippets for each Parse network request]
+
 - [OPTIONAL: List endpoints if using existing API such as Yelp]
+    * An API for Anime
+        * Base URL : https://api.jikan.moe/v3
+
+
+    | HTTP Verb  |      Endpoint       |                Description                |
+    |:---------:|:---------------:|:-----------------------------------------:|
+    |  GET   | /episodes |  List of episodes         |
+    |   GET   |      /pictures     | List of related pictures |
+    |  GET  | /videos|  List of Promotional Videos & episodes (if any)      |
+    |   GET  |      /stats     | Related statistical information |
+    |   GET  |      /moreinfo     | A string of more information (if any) | 
+    
+    * An API for Manga
+        * Base URL: https://api.jikan.moe/v3
+
+    | HTTP Verb  |      Endpoint       |                Description                |
+    |:---------:|:---------------:|:-----------------------------------------:|
+    |   GET   |      /pictures     | Pictures related to the item |
+    |   GET  |      /stats     | Statistical information related to the item |
+    |   GET  |      /moreinfo     | A string of more information (if any) |
+    
+    * An API for Characters
+        * Base URL: https://kitsu.io/api/oauth
+
+    | HTTP Verb  |      Endpoint       |                Description                |
+    |:---------:|:---------------:|:-----------------------------------------:|
+    |   GET   |      /pictures     | Pictures related to the item |
+    |   GET  |      /name     | Name of the  Character|
+    |   GET  |      /description     | Description of the Character|
