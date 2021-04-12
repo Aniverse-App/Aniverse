@@ -22,10 +22,11 @@
         android:hint="Username"
         android:inputType="textEmailAddress"
         android:selectAllOnFocus="true"
+        android:textColor="@android:color/black"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"/>
-        //android:textColor="@color/black"/>
+        app:layout_constraintTop_toTopOf="parent" />
+    //android:textColor="@color/black"/>
 
     <EditText
         android:id="@+id/password"
@@ -40,10 +41,11 @@
         android:imeOptions="actionDone"
         android:inputType="textPassword"
         android:selectAllOnFocus="true"
+        android:textColor="@android:color/black"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/username" />
-        //android:textColor="@color/black"
+    //android:textColor="@color/black"
 
     <Button
         android:id="@+id/login"
@@ -54,15 +56,16 @@
         android:layout_marginTop="16dp"
         android:layout_marginEnd="48dp"
         android:layout_marginBottom="64dp"
-        android:background="#2196F3"
+        android:background="@android:color/black"
         android:enabled="false"
         android:text="@string/action_sign_in"
+        android:textColor="@android:color/black"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/password"
         app:layout_constraintVertical_bias="0.2" />
-        //android:textColor="@color/black"
+    //android:textColor="@color/black"
 
     <ProgressBar
         android:id="@+id/loading"

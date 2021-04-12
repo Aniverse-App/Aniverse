@@ -1,102 +1,45 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_width="match_parent" android:layout_height="match_parent">
 
-    <LinearLayout
-        android:orientation="vertical"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="@color/colorBack">
+    <ImageView
+        android:id="@+id/ivProfilePhoto"
+        android:layout_width="wrap_content"
+        android:layout_height="100dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="0dp"
+        app:srcCompat="@drawable/instagram_user_outline_24" />
 
-        <LinearLayout
-            android:orientation="vertical"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@color/colorPrimaryLargerDark">
+    <EditText
+        android:id="@+id/etProfileUser"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/ivProfilePhoto"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:ems="10"
+        android:hint="Username"
+        android:inputType="textPersonName" />
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:gravity="center"
-                android:background="@drawable/profile">
+    <Button
+        android:id="@+id/buttonSaveChanges"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/etProfileUser"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:text="Save Changes"
+        app:rippleColor="#FFFFFF" />
 
-                <ImageView
-                    android:id="@+id/rvProfileImage"
-                    android:layout_width="300px"
-                    android:layout_height="300px"
-                    android:layout_marginTop="68dp"
-                    android:layout_marginBottom="50px"
-                    android:scaleType="centerCrop"
-                    tools:srcCompat="@tools:sample/avatars"/>
-
-                <EditText
-                    android:id="@+id/rvUsername"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="10px"
-                    android:ems="10"
-                    android:hint="Name"
-                    android:textColor="@color/colorTitle"
-                    android:inputType="textPersonName"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.502"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/rvProfileImage" />
-
-                <Button
-                    android:id="@+id/rvChangeImage"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="100px"
-                    android:textSize="18sp"
-                    android:textStyle="normal"
-                    android:text="Change profile picture"
-                    android:textColor="@color/colorSubTitle"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.561"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/rvUsername" />
-
-
-            </LinearLayout>
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@drawable/profile2"
-            android:gravity="center"
-            android:orientation="horizontal"
-            android:paddingLeft="50px"
-            android:paddingTop="60px"
-            android:paddingBottom="60px">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="This is my profile. Check it Out"
-                android:textSize="18dp"
-                android:textStyle="italic" />
-
-        </LinearLayout>
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textSize="18dp"
-            android:textStyle="bold" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textSize="18sp"
-            android:textStyle="italic" />
-
-    </LinearLayout>
-
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <ProgressBar
+        android:id="@+id/pbSaveChanges"
+        style="?android:attr/progressBarStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/buttonSaveChanges"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:visibility="gone" />
+</RelativeLayout>

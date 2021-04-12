@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/action_anime"
+        android:icon="@drawable/dragonball"
+        android:title="Anime"
+        app:showAsAction="always" />
+    <item
+        android:id="@+id/action_manga"
+        android:icon="@drawable/manga"
+        android:title="Manga"
+        app:showAsAction="always" />
+    <item
+        android:id="@+id/action_character"
+        android:icon="@drawable/natsu"
+        android:title="Character"
+        app:showAsAction="always" />
+    <item
+        android:id="@+id/action_discussion"
+        android:icon="@drawable/discussion"
+        android:title="Discussion"
+        app:showAsAction="always" />
+    <item
+        android:id="@+id/action_search"
+        android:icon="@drawable/search"
+        android:title="Search"
+        app:showAsAction="always" />
+    <item
+        android:id="@+id/action_profile"
+        android:icon="@drawable/profile"
+        android:title="Profile"
+        app:showAsAction="always" />
+</menu>
