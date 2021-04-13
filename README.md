@@ -1,6 +1,12 @@
 Original App Design Project - README Template
 ===
 
+# Sprint 1
+## Video Walkthrough
+Here's a walkthrough of implemented user stories:
+
+<img src='https://i.imgur.com/ikHShpE.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+
 # Aniverse
 
 ## Table of Contents
@@ -227,3 +233,5 @@ Model:Profile Screen
     |   GET   |      /pictures     | Pictures related to the item |
     |   GET  |      /name     | Name of the  Character|
     |   GET  |      /description     | Description of the Character|
+    
+
