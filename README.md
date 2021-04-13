@@ -2,10 +2,10 @@ Original App Design Project - README Template
 ===
 
 # Sprint 1
-- [x] User can sign up to create a new account.
-- [x] User can log in to their account.
-- [x] The current signed in user is persisted across app restarts.
-- [x] User can take a photo and add a caption.
+- [x] User can take a picture
+- [x] User can choose a picture from their gallery.
+- [x] User can write a comment to their discussion
+- [x] User can post the discussion to the Parse Server
 ## Video Walkthrough
 Here's a walkthrough of implemented user stories:
 
