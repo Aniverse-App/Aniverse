@@ -2,6 +2,10 @@ Original App Design Project - README Template
 ===
 
 # Sprint 1
+- [x] User can sign up to create a new account.
+- [x] User can log in to their account.
+- [x] The current signed in user is persisted across app restarts.
+- [x] User can take a photo and add a caption.
 ## Video Walkthrough
 Here's a walkthrough of implemented user stories:
 
