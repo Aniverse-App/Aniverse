@@ -1,17 +1,8 @@
 package com.example.aniverse.ui.login;
 
 import android.app.Activity;
-
-import androidx.lifecycle.Observer;
-import androidx.lifecycle.ViewModelProvider;
-
 import android.content.Intent;
 import android.os.Bundle;
-
-import androidx.annotation.Nullable;
-import androidx.annotation.StringRes;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.util.Log;
@@ -24,10 +15,14 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.aniverse.MainActivity;
+import androidx.annotation.Nullable;
+import androidx.annotation.StringRes;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.lifecycle.Observer;
+import androidx.lifecycle.ViewModelProvider;
+
 import com.example.aniverse.R;
-import com.example.aniverse.ui.login.LoginViewModel;
-import com.example.aniverse.ui.login.LoginViewModelFactory;
+import com.example.aniverse.login.MainActivity;
 import com.parse.LogInCallback;
 import com.parse.ParseException;
 import com.parse.ParseUser;
