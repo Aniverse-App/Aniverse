@@ -33,10 +33,10 @@ public class MainActivity extends AppCompatActivity {
             public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
                 Fragment fragment;
                 switch (menuItem.getItemId()) {
-                    case R.id.action_anime:
+                   /* case R.id.action_anime:
                         Toast.makeText(MainActivity.this, "Anime!", Toast.LENGTH_SHORT).show();
                         fragment = new ComposeFragment();
-                        break;
+                        break; */
                     case R.id.action_manga:
                         Toast.makeText(MainActivity.this, "Manga!", Toast.LENGTH_SHORT).show();
                         fragment = new ComposeFragment();
@@ -64,7 +64,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
         // Set default selection
-        bottomNavigationView.setSelectedItemId(R.id.action_anime);
+        bottomNavigationView.setSelectedItemId(R.id.action_manga);
     }
 }
 
