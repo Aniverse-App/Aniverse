@@ -27,8 +27,8 @@ import static com.parse.Parse.getApplicationContext;
 public class CharacterFragment extends Fragment {
 
     public static final String TAG = "CharacterFragment";
-    //int eren=0,luffy=0,naruto=0,kaneki=0;
-    Button quit,normalMode,characterInfos, guessMode;
+    Button quit;
+    Button guessMode;
     Intent intent;
     LinearLayout mainMenuLayout;
     ArrayList<Integer> backgroundImages = new ArrayList<>();
@@ -70,8 +70,8 @@ public class CharacterFragment extends Fragment {
         //Binding variables with XML variables
         mainMenuLayout=(LinearLayout)view.findViewById(R.id.mainMenu);
         quit = (Button) view.findViewById(R.id.quit);
-        //normalMode = (Button) view.findViewById(R.id.normalMode);
-        //characterInfos = (Button) view.findViewById(R.id.characterInfos);
+        // normalMode = (Button) view.findViewById(R.id.normalMode);
+        // characterInfos = (Button) view.findViewById(R.id.characterInfos);
         guessMode=(Button)view.findViewById(R.id.guessMode);
         backgroundImage=(ImageView)view.findViewById(R.id.backgroundImage);
 
@@ -79,13 +79,13 @@ public class CharacterFragment extends Fragment {
         loadImageBackground();
 
         //Guess mode where character gets asked QuestionsActivity and he has to find out the appropriate character
-        /*normalMode.setOnClickListener(new View.OnClickListener(){
+        /* normalMode.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view){
                 intent=new Intent(getApplicationContext(), QuestionsActivity.class);
                 startActivity(intent);
             }
-        });*/
+        }); */
 
         guessMode.setOnClickListener(new View.OnClickListener(){
             @Override
@@ -95,7 +95,7 @@ public class CharacterFragment extends Fragment {
             }
         });
         //this button let users read info about anime characters
-       /* characterInfos.setOnClickListener(new View.OnClickListener() {
+     /*  characterInfos.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 intent=new Intent(getApplicationContext(), DisplayCharactersActivity.class);

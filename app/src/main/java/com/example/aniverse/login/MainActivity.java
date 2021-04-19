@@ -39,10 +39,10 @@ public class MainActivity extends AppCompatActivity {
                         Toast.makeText(MainActivity.this, "Anime!", Toast.LENGTH_SHORT).show();
                         fragment = new ComposeFragment();
                         break;
-                    /*case R.id.action_manga:
+                    case R.id.action_manga:
                         Toast.makeText(MainActivity.this, "Manga!", Toast.LENGTH_SHORT).show();
                         fragment = new ComposeFragment();
-                        break;*/
+                        break;
                     case R.id.action_character:
                         Toast.makeText(MainActivity.this, "Character!", Toast.LENGTH_SHORT).show();
                         fragment = new CharacterFragment();
@@ -51,10 +51,6 @@ public class MainActivity extends AppCompatActivity {
                         Toast.makeText(MainActivity.this, "Discussion!", Toast.LENGTH_SHORT).show();
                         fragment = new DiscussionFragment();
                         break;
-                    case R.id.action_search:
-                        Toast.makeText(MainActivity.this, "Search!", Toast.LENGTH_SHORT).show();
-                        fragment = new ComposeFragment();
-                        return true;
                     case R.id.action_profile:
                     default:
                         Toast.makeText(MainActivity.this, "Profile!", Toast.LENGTH_SHORT).show();
