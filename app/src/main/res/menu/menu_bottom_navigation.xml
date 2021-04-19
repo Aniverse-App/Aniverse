@@ -7,14 +7,15 @@
         android:icon="@drawable/dragonball"
         android:title="Anime"
         app:showAsAction="always" />
-    <item
+    <!--
+<item
         android:id="@+id/action_manga"
         android:icon="@drawable/manga"
         android:title="Manga"
-        app:showAsAction="always" />
+        app:showAsAction="always" />-->
     <item
         android:id="@+id/action_character"
-        android:icon="@drawable/natsu"
+        android:icon="@android:drawable/ic_menu_compass"
         android:title="Character"
         app:showAsAction="always" />
     <item
