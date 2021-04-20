@@ -3,12 +3,14 @@ package com.example.aniverse.login;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.widget.Toast;
+
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 
 import com.example.aniverse.R;
+import com.example.aniverse.fragments.CharacterFragment;
 import com.example.aniverse.fragments.ComposeFragment;
 import com.example.aniverse.fragments.DiscussionFragment;
 import com.example.aniverse.fragments.ProfileFragment;
@@ -43,16 +45,12 @@ public class MainActivity extends AppCompatActivity {
                         break;
                     case R.id.action_character:
                         Toast.makeText(MainActivity.this, "Character!", Toast.LENGTH_SHORT).show();
-                        fragment = new ComposeFragment();
+                        fragment = new CharacterFragment();
                         break;
                     case R.id.action_discussion:
                         Toast.makeText(MainActivity.this, "Discussion!", Toast.LENGTH_SHORT).show();
                         fragment = new DiscussionFragment();
                         break;
-                    case R.id.action_search:
-                        Toast.makeText(MainActivity.this, "Search!", Toast.LENGTH_SHORT).show();
-                        fragment = new ComposeFragment();
-                        return true;
                     case R.id.action_profile:
                     default:
                         Toast.makeText(MainActivity.this, "Profile!", Toast.LENGTH_SHORT).show();
