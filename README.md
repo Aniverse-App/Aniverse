@@ -11,6 +11,16 @@ Here's a walkthrough of implemented user stories:
 
 <img src='https://i.imgur.com/ikHShpE.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
+# Sprint 2
+- [x] Create a fragment for each screen necessary
+-  e.g. Anime, Manga, Character, Discussion, Profile
+- [x] Data for the Character Screen must be populated
+- [x] Create a quiz based on the data populated for the Charater Screen
+## Video Walkthrough
+Here's a walkthrough of implemented user stories:
+
+<img src='https://i.imgur.com/DT9vQJT.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+
 # Aniverse
 
 ## Table of Contents
