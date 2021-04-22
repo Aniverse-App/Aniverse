@@ -8,4 +8,6 @@
     <string name="login_failed" />
     <string name="invalid_username" />
     <string name="invalid_password" />
+    <string name="score" />
+    <string name="hello_blank_fragment" />
 </resources>
