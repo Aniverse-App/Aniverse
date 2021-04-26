@@ -21,6 +21,17 @@ Here's a walkthrough of implemented user stories:
 
 <img src='https://i.imgur.com/DT9vQJT.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
+# Sprint 2
+- [x] Data for the Anime Screen must be populated
+- [X] Data for the Manga Screen must be populated
+- [x] User should be able to click on an Anime of their choosing and see more details
+- [X] User should be able to click on the Manga of their choosing and see more details
+- [X] User can search for an Anime/Manga of their choosing
+## Video Walkthrough
+Here's a walkthrough of implemented user stories:
+
+<img src='https://i.imgur.com/sp65RBb.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+
 # Aniverse
 
 ## Table of Contents
