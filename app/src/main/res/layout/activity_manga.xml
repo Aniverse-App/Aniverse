@@ -19,15 +19,15 @@
             android:id="@+id/topWallpaperBar"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
-            android:background="?attr/backgroundOwn"
+            android:background="@color/colorBack"
             android:theme="@style/MyThemeOverlay_Toolbar"
             app:contentInsetStartWithNavigation="0dp"
             app:menu="@menu/top_menu_wallpaper"
-            app:navigationIcon="@drawable/ic_manga"
-            app:navigationIconTint="?attr/iconOwn"
+            app:navigationIcon="@drawable/heartsprite"
+            app:navigationIconTint="@color/colorBack"
             app:title="@string/manga_title"
-            app:titleTextColor="?attr/textOwn" />
-
+            app:titleTextColor="@color/colorBack" />
+<!-- 22, 26, 27 29 57 71 72 97-->
 
     </com.google.android.material.appbar.AppBarLayout>
 
@@ -50,11 +50,11 @@
         android:layout_height="match_parent"
         android:layout_marginTop="?attr/actionBarSize">
 
-        <com.hukex.punpun.widget.AutofitRecyclerViewAnimeManga
+        <com.example.aniverse.widget.AutofitRecyclerViewAnimeManga
             android:id="@+id/autofitRecyclerViewManga"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="?attr/backgroundOwn"
+            android:background="@color/colorAccount"
             android:clipToPadding="false"
             android:columnWidth="180dp"
             android:padding="1dp"
@@ -68,14 +68,14 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom"
-        android:background="?attr/backgroundOwn"
-        app:itemIconTint="@color/bottom_nav_color"
-        app:itemTextColor="?attr/textOwn"
+        android:background="@drawable/heartsprite"
+        app:itemIconTint="@color/colorAccount"
+        app:itemTextColor="@color/cardview_dark_background"
         app:labelVisibilityMode="labeled"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_insetEdge="bottom"
-        app:menu="@menu/bottom_menu_wallpaper" />
+        app:menu="@menu/menu_bottom_navigation" />
 
 
     <ProgressBar
@@ -94,7 +94,7 @@
         android:layout_width="40dp"
         android:layout_height="40dp"
         android:layout_gravity="center"
-        app:SpinKit_Color="@color/purple_200"
+        app:SpinKit_Color="@color/colorPrimary"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

@@ -19,6 +19,7 @@ import com.bumptech.glide.load.DataSource;
 import com.bumptech.glide.load.engine.GlideException;
 import com.bumptech.glide.request.RequestListener;
 import com.bumptech.glide.request.target.Target;
+import com.example.aniverse.utils.GlideApp;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.example.aniverse.AnimeActivity;
 import com.example.aniverse.R;
@@ -27,7 +28,7 @@ import com.example.aniverse.model.anime.AnimeTop;
 import com.example.aniverse.model.anime.Genre;
 import com.example.aniverse.model.anime.Producer;
 import com.example.aniverse.model.anime.Studio;
-import com.example.aniverse.utils.GlideApp;
+import com.example.aniverse.utils.CustomGlideModule;
 
 
 public class AnimeFragment extends Fragment {
@@ -72,7 +73,7 @@ public class AnimeFragment extends Fragment {
 
         View parentItem = (View) view.getParent();
         BottomNavigationView bottomNavigationViewWallpaper = parentItem.findViewById(R.id.bottomWallpaperBar);
-        bottomNavigationViewWallpaper.setVisibility(View.GONE);
+       // bottomNavigationViewWallpaper.setVisibility(View.GONE);
 
         ProgressBar progressBar;
         progressBar = view.findViewById(R.id.progress_bar_circle_image_item);
@@ -96,10 +97,11 @@ public class AnimeFragment extends Fragment {
         score.setText(String.valueOf(anime.getScore()));
         ImageView start = view.findViewById(R.id.star_inside);
         if (anime.getScore() >= 4 && anime.getScore() <= 6) {
-            start.setImageResource(R.drawable.ic_start_half);
+            start.setImageResource(R.drawable.appicon);
         } else if (anime.getScore() < 3) {
-            start.setImageResource(R.drawable.ic_start_empty);
+            start.setImageResource(R.drawable.eren);
         }
+        //change 100 102
         TextView members = view.findViewById(R.id.members_inside);
         members.setText("(" + animeInfoCall.getScoredBy() + " " + getString(R.string.users) + ")");
         Button closeButton = view.findViewById(R.id.close_button);

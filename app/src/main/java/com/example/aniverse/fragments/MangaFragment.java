@@ -17,6 +17,7 @@ import com.bumptech.glide.load.DataSource;
 import com.bumptech.glide.load.engine.GlideException;
 import com.bumptech.glide.request.RequestListener;
 import com.bumptech.glide.request.target.Target;
+import com.example.aniverse.utils.GlideApp;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.example.aniverse.MangaActivity;
 import com.example.aniverse.R;
@@ -24,7 +25,7 @@ import com.example.aniverse.model.anime.Genre;
 import com.example.aniverse.model.manga.Author;
 import com.example.aniverse.model.manga.MangaInfoCall;
 import com.example.aniverse.model.manga.MangaTop;
-import com.example.aniverse.utils.GlideApp;
+import com.example.aniverse.utils.CustomGlideModule;
 
 
 public class MangaFragment extends Fragment {
@@ -91,10 +92,11 @@ public class MangaFragment extends Fragment {
         score.setText(String.valueOf(manga.getScore()));
         ImageView start = view.findViewById(R.id.star_inside);
         if (manga.getScore() >= 4 && manga.getScore() <= 6) {
-            start.setImageResource(R.drawable.ic_start_half);
+            start.setImageResource(R.drawable.appicon);
         } else if (manga.getScore() < 3) {
-            start.setImageResource(R.drawable.ic_start_empty);
+            start.setImageResource(R.drawable.eren);
         }
+        //change 95 97
         TextView members = view.findViewById(R.id.members_inside);
         members.setText("(" + MangaInfoCall.getScoredBy() + " " + getString(R.string.users) + ")");
         Button closeButton = view.findViewById(R.id.close_button);

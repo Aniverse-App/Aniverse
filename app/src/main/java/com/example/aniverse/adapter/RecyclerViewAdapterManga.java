@@ -12,6 +12,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.aniverse.R;
 import com.example.aniverse.model.manga.MangaTop;
+import com.example.aniverse.utils.CustomGlideModule;
 import com.example.aniverse.utils.GlideApp;
 import com.example.aniverse.utils.ItemClickListener;
 
@@ -48,15 +49,17 @@ public class RecyclerViewAdapterManga extends RecyclerView.Adapter<RecyclerViewA
                 .into(holder.imageView);
         holder.imageView.setOnClickListener(v -> itemClickListener.onMangaClicked(mangas.get(position)));
 
+        //Lines 60 62  change icon
+
         TextView textView = holder.imageView.getRootView().findViewById(R.id.anime_title);
         textView.setText(mangas.get(position).getTitle());
         TextView score = holder.imageView.getRootView().findViewById(R.id.anime_score);
         score.setText(String.valueOf(mangas.get(position).getScore()));
         ImageView iconStar = holder.imageView.getRootView().findViewById(R.id.anime_score_icon);
         if (mangas.get(position).getScore() >= 4 && mangas.get(position).getScore() <= 6) {
-            iconStar.setImageResource(R.drawable.ic_start_half);
+            iconStar.setImageResource(R.drawable.anime_icon);
         } else if (mangas.get(position).getScore() < 3) {
-            iconStar.setImageResource(R.drawable.ic_start_empty);
+            iconStar.setImageResource(R.drawable.appicon);
         }
         TextView rank = holder.imageView.getRootView().findViewById(R.id.rank_anime);
         if (mangas.get(position).getRank() != null)

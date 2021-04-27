@@ -1,4 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <item name="etPassword" type="id"></item>
+    <item name="bar_wallpaper" type="id" />
+    <item name="bar_manga" type="id" />
+    <item name="bar_anime" type="id" />
 </resources>

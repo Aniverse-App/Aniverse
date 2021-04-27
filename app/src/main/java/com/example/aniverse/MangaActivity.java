@@ -22,6 +22,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.app.AppCompatDelegate;
 import androidx.appcompat.widget.SearchView;
 import androidx.core.content.ContextCompat;
+import androidx.preference.Preference;
 import androidx.preference.PreferenceManager;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -32,18 +33,18 @@ import com.github.ybq.android.spinkit.style.WanderingCubes;
 import com.google.android.material.appbar.MaterialToolbar;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.snackbar.Snackbar;
-import com.hukex.punpun.adapter.RecyclerViewAdapterManga;
-import com.hukex.punpun.adapter.RecyclerViewAdapterWallpaper;
-import com.hukex.punpun.api.AnimeMangaApi;
-import com.hukex.punpun.fragment.MangaFragment;
-import com.hukex.punpun.model.anime.AnimeTop;
-import com.hukex.punpun.model.manga.MangaInfoCall;
-import com.hukex.punpun.model.manga.MangaTop;
-import com.hukex.punpun.model.manga.MangaTopCall;
-import com.hukex.punpun.model.manga.SearchManga;
-import com.hukex.punpun.model.wallpapers.Wallpaper;
-import com.hukex.punpun.utils.ItemClickListener;
-import com.hukex.punpun.widget.AutofitRecyclerViewAnimeManga;
+import com.example.aniverse.adapter.RecyclerViewAdapterManga;
+//import com.example.aniverse.adapter.RecyclerViewAdapterWallpaper;
+import com.example.aniverse.api.AnimeMangaApi;
+import com.example.aniverse.fragments.MangaFragment;
+import com.example.aniverse.model.anime.AnimeTop;
+import com.example.aniverse.model.manga.MangaInfoCall;
+import com.example.aniverse.model.manga.MangaTop;
+import com.example.aniverse.model.manga.MangaTopCall;
+import com.example.aniverse.model.manga.SearchManga;
+//import com.example.aniverse.model.wallpapers.Wallpaper;
+import com.example.aniverse.utils.ItemClickListener;
+import com.example.aniverse.widget.AutofitRecyclerViewAnimeManga;
 
 import java.io.IOException;
 import java.net.HttpURLConnection;
@@ -111,7 +112,7 @@ public class MangaActivity extends AppCompatActivity implements ItemClickListene
             reachEnd = false;
             searchAndLoadMangas();
         });
-        swipeRefreshLayout.setProgressBackgroundColorSchemeColor(ContextCompat.getColor(this, R.color.purple_main));
+        swipeRefreshLayout.setProgressBackgroundColorSchemeColor(ContextCompat.getColor(this, R.color.colorBack)); //change color 114
         urlBase = "top/manga/";
         searchAndLoadMangas();
         materialToolbar = findViewById(R.id.topWallpaperBar);
@@ -128,7 +129,7 @@ public class MangaActivity extends AppCompatActivity implements ItemClickListene
         materialToolbar.setOnMenuItemClickListener(v -> {
             if (v.getItemId() == R.id.settingsW) { // go to settings activity
                 Intent intent = new Intent(this, Preference.class);
-                intent.putExtra("caller", "com.hukex.punpun.MangaActivity");
+                intent.putExtra("caller", "com.example.aniverse.MangaActivity");
                 startActivity(intent);
                 return true;
             }
@@ -138,13 +139,13 @@ public class MangaActivity extends AppCompatActivity implements ItemClickListene
         bottomNavigationView = findViewById(R.id.bottomWallpaperBar);
         bottomNavigationView.getMenu().getItem(1).setChecked(true);
         bottomNavigationView.setOnNavigationItemSelectedListener(v -> {
-            if (v.getItemId() == R.id.bar_wallpaper) { // go to wallpaper activity
+         /*   if (v.getItemId() == R.id.bar_wallpaper) { // go to wallpaper activity
                 Intent intent = new Intent(this, WallpaperActivity.class);
                 intent.setFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
                 startActivityIfNeeded(intent, 0);
                 overridePendingTransition(0, 0);
                 return true;
-            } else if (v.getItemId() == R.id.bar_anime) {   // go to manga activity
+            } else */ if (v.getItemId() == R.id.bar_anime) {   // go to manga activity
                 Intent intent = new Intent(this, AnimeActivity.class);
                 intent.setFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
                 startActivityIfNeeded(intent, 0);
@@ -178,7 +179,7 @@ public class MangaActivity extends AppCompatActivity implements ItemClickListene
                 }
                 progressBarCenter.setVisibility(View.GONE);
                 list = response.body().getTop();
-                recyclerViewAdapterManga = new RecyclerViewAdapterManga(com.hukex.punpun.MangaActivity.this, list, com.hukex.punpun.MangaActivity.this);
+                recyclerViewAdapterManga = new RecyclerViewAdapterManga(com.example.aniverse.MangaActivity.this, list, com.example.aniverse.MangaActivity.this);
                 autofitRecyclerViewAnimeManga.setHasFixedSize(true);
                 autofitRecyclerViewAnimeManga.setAdapter(recyclerViewAdapterManga);
 
@@ -250,7 +251,7 @@ public class MangaActivity extends AppCompatActivity implements ItemClickListene
             this.getTheme().resolveAttribute(R.attr.backgroundOwn, typedValue, true);
             @ColorInt int color = typedValue.data;
             ValueAnimator colorAnimation = ValueAnimator.ofObject(new ArgbEvaluator(), color
-                    , ContextCompat.getColor(this, R.color.purple_200));
+                    , ContextCompat.getColor(this, R.color.colorBack)); // chaneg color254
             colorAnimation.setDuration(600); // milliseconds
             colorAnimation.addUpdateListener(animator -> {
                 materialToolbar.setBackgroundColor((int) animator.getAnimatedValue());
@@ -269,7 +270,7 @@ public class MangaActivity extends AppCompatActivity implements ItemClickListene
             TypedValue typedValue = new TypedValue();
             this.getTheme().resolveAttribute(R.attr.backgroundOwn, typedValue, true);
             @ColorInt int color = typedValue.data;
-            ValueAnimator colorAnimation = ValueAnimator.ofObject(new ArgbEvaluator(), ContextCompat.getColor(com.hukex.punpun.MangaActivity.this, R.color.purple_200)
+            ValueAnimator colorAnimation = ValueAnimator.ofObject(new ArgbEvaluator(), ContextCompat.getColor(com.example.aniverse.MangaActivity.this, R.color.colorBack)
                     , color);
             colorAnimation.setDuration(600); // milliseconds
             colorAnimation.addUpdateListener(animator -> {
@@ -278,9 +279,9 @@ public class MangaActivity extends AppCompatActivity implements ItemClickListene
             });
             colorAnimation.start();
             if (!urlBase.equals("top/manga/"))
-                materialToolbar.setNavigationIcon(R.drawable.ic_left);
+                materialToolbar.setNavigationIcon(R.drawable.dbs); //change 282 284 273 color
             else
-                materialToolbar.setNavigationIcon(R.drawable.ic_wallpapers);
+                materialToolbar.setNavigationIcon(R.drawable.circle);
             frameLayout.setVisibility(View.GONE);
             return false;
         });
@@ -313,7 +314,7 @@ public class MangaActivity extends AppCompatActivity implements ItemClickListene
         materialToolbar.setTitle(name);
         searchView.setQuery("", false);
         searchView.setIconified(true);
-        materialToolbar.setNavigationIcon(R.drawable.ic_left);
+        materialToolbar.setNavigationIcon(R.drawable.circle); //change 317
         frameLayout.setVisibility(View.GONE);
     }
 
@@ -335,7 +336,7 @@ public class MangaActivity extends AppCompatActivity implements ItemClickListene
                 }
                 progressBarCenter.setVisibility(View.GONE);
                 list = response.body().getResults();
-                recyclerViewAdapterManga = new RecyclerViewAdapterManga(com.hukex.punpun.MangaActivity.this, list, com.hukex.punpun.MangaActivity.this);
+                recyclerViewAdapterManga = new RecyclerViewAdapterManga(com.example.aniverse.MangaActivity.this, list, com.example.aniverse.MangaActivity.this);
                 autofitRecyclerViewAnimeManga.setHasFixedSize(true);
                 autofitRecyclerViewAnimeManga.setAdapter(recyclerViewAdapterManga);
 
@@ -424,7 +425,7 @@ public class MangaActivity extends AppCompatActivity implements ItemClickListene
                     Thread thread = new Thread(() -> {
                         try {
                             if (hasActiveInternetConnection()) {
-                                com.hukex.punpun.MangaActivity.this.runOnUiThread(() -> {
+                                com.example.aniverse.MangaActivity.this.runOnUiThread(() -> {
                                     if (list == null && urlBase.equals("top/manga/"))
                                         searchAndLoadMangas();
                                     else if (!urlBase.equals("top/manga/"))
@@ -433,7 +434,7 @@ public class MangaActivity extends AppCompatActivity implements ItemClickListene
                                         secondApiCallScroll(animeMangaApi, urlBase);
                                 });
                             } else {
-                                com.hukex.punpun.MangaActivity.this.runOnUiThread(this::errorConnectionToast);
+                                com.example.aniverse.MangaActivity.this.runOnUiThread(this::errorConnectionToast);
                             }
                         } catch (Exception e) {
                             e.printStackTrace();
@@ -465,10 +466,12 @@ public class MangaActivity extends AppCompatActivity implements ItemClickListene
         }
         return false;
     }
-
+/*
     @Override
     public void onPhotoClicked(RecyclerViewAdapterWallpaper.MyViewHolder holder, int position, List<Wallpaper> wallpapers) {
     }
+
+ */
 
     @Override
     public void onAnimeClicked(AnimeTop anime) {
@@ -526,7 +529,7 @@ public class MangaActivity extends AppCompatActivity implements ItemClickListene
         urlBase = "top/manga/";
         page = 1;
         searchAndLoadMangas();
-        materialToolbar.setNavigationIcon(R.drawable.ic_manga);
+        materialToolbar.setNavigationIcon(R.drawable.appicon); //change 532
         materialToolbar.setTitle(R.string.manga_title);
     }
 }
