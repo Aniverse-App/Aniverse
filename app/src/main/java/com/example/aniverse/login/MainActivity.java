@@ -10,9 +10,11 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 
 import com.example.aniverse.R;
+import com.example.aniverse.fragments.AnimeFragment;
 import com.example.aniverse.fragments.CharacterFragment;
 import com.example.aniverse.fragments.ComposeFragment;
 import com.example.aniverse.fragments.DiscussionFragment;
+import com.example.aniverse.fragments.MangaFragment;
 import com.example.aniverse.fragments.ProfileFragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
@@ -35,13 +37,13 @@ public class MainActivity extends AppCompatActivity {
             public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
                 Fragment fragment;
                 switch (menuItem.getItemId()) {
-                   /* case R.id.action_anime:
+                    case R.id.action_anime:
                         Toast.makeText(MainActivity.this, "Anime!", Toast.LENGTH_SHORT).show();
-                        fragment = new ComposeFragment();
-                        break; */
+                        fragment = new AnimeFragment();
+                        break;
                     case R.id.action_manga:
                         Toast.makeText(MainActivity.this, "Manga!", Toast.LENGTH_SHORT).show();
-                        fragment = new ComposeFragment();
+                        fragment = new MangaFragment();
                         break;
                     case R.id.action_character:
                         Toast.makeText(MainActivity.this, "Character!", Toast.LENGTH_SHORT).show();
@@ -62,7 +64,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
         // Set default selection
-        bottomNavigationView.setSelectedItemId(R.id.action_manga);
+        bottomNavigationView.setSelectedItemId(R.id.action_anime);
     }
 }
 
