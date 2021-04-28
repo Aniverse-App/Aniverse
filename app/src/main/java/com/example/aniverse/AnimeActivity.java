@@ -32,18 +32,18 @@ import com.github.ybq.android.spinkit.style.WanderingCubes;
 import com.google.android.material.appbar.MaterialToolbar;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.snackbar.Snackbar;
-import com.hukex.punpun.adapter.RecyclerViewAdapterAnime;
-import com.hukex.punpun.adapter.RecyclerViewAdapterWallpaper;
-import com.hukex.punpun.api.AnimeMangaApi;
-import com.hukex.punpun.fragment.AnimeFragment;
-import com.hukex.punpun.model.anime.AnimeInfoCall;
-import com.hukex.punpun.model.anime.AnimeTop;
-import com.hukex.punpun.model.anime.AnimeTopCall;
-import com.hukex.punpun.model.anime.SearchAnime;
-import com.hukex.punpun.model.manga.MangaTop;
-import com.hukex.punpun.model.wallpapers.Wallpaper;
-import com.hukex.punpun.utils.ItemClickListener;
-import com.hukex.punpun.widget.AutofitRecyclerViewAnimeManga;
+import com.example.aniverse.adapter.RecyclerViewAdapterAnime;
+import com.example.aniverse.adapter.RecyclerViewAdapterWallpaper;
+import com.example.aniverse.api.AnimeMangaApi;
+import com.example.aniverse.fragment.AnimeFragment;
+import com.example.aniverse.model.anime.AnimeInfoCall;
+import com.example.aniverse.model.anime.AnimeTop;
+import com.example.aniverse.model.anime.AnimeTopCall;
+import com.example.aniverse.model.anime.SearchAnime;
+import com.example.aniverse.model.manga.MangaTop;
+import com.example.aniverse.model.wallpapers.Wallpaper;
+import com.example.aniverse.utils.ItemClickListener;
+import com.example.aniverse.widget.AutofitRecyclerViewAnimeManga;
 
 import java.io.IOException;
 import java.net.HttpURLConnection;
@@ -129,7 +129,7 @@ public class AnimeActivity extends AppCompatActivity implements ItemClickListene
         materialToolbar.setOnMenuItemClickListener(v -> {
             if (v.getItemId() == R.id.settingsW) { // go to settings activity
                 Intent intent = new Intent(this, Preference.class);
-                intent.putExtra("caller", "com.hukex.punpun.AnimeActivity");
+                intent.putExtra("caller", "com.example.aniverse.AnimeActivity");
                 startActivity(intent);
                 return true;
             }
@@ -178,7 +178,7 @@ public class AnimeActivity extends AppCompatActivity implements ItemClickListene
                 }
                 progressBarCenter.setVisibility(View.GONE);
                 list = response.body().getTop();
-                recyclerViewAdapterAnime = new RecyclerViewAdapterAnime(com.hukex.punpun.AnimeActivity.this, list, com.hukex.punpun.AnimeActivity.this);
+                recyclerViewAdapterAnime = new RecyclerViewAdapterAnime(com.example.aniverse.AnimeActivity.this, list, com.example.aniverse.AnimeActivity.this);
                 autofitRecyclerViewAnimeManga.setHasFixedSize(true);
                 autofitRecyclerViewAnimeManga.setAdapter(recyclerViewAdapterAnime);
 
@@ -269,7 +269,7 @@ public class AnimeActivity extends AppCompatActivity implements ItemClickListene
             TypedValue typedValue = new TypedValue();
             this.getTheme().resolveAttribute(R.attr.backgroundOwn, typedValue, true);
             @ColorInt int color = typedValue.data;
-            ValueAnimator colorAnimation = ValueAnimator.ofObject(new ArgbEvaluator(), ContextCompat.getColor(com.hukex.punpun.AnimeActivity.this, R.color.purple_200)
+            ValueAnimator colorAnimation = ValueAnimator.ofObject(new ArgbEvaluator(), ContextCompat.getColor(com.example.aniverse.AnimeActivity.this, R.color.purple_200)
                     , color);
             colorAnimation.setDuration(600); // milliseconds
             colorAnimation.addUpdateListener(animator -> {
@@ -333,7 +333,7 @@ public class AnimeActivity extends AppCompatActivity implements ItemClickListene
                 }
                 progressBarCenter.setVisibility(View.GONE);
                 list = response.body().getResults();
-                recyclerViewAdapterAnime = new RecyclerViewAdapterAnime(com.hukex.punpun.AnimeActivity.this, list, com.hukex.punpun.AnimeActivity.this);
+                recyclerViewAdapterAnime = new RecyclerViewAdapterAnime(com.example.aniverse.AnimeActivity.this, list, com.example.aniverse.AnimeActivity.this);
                 autofitRecyclerViewAnimeManga.setHasFixedSize(true);
                 autofitRecyclerViewAnimeManga.setAdapter(recyclerViewAdapterAnime);
 
@@ -421,7 +421,7 @@ public class AnimeActivity extends AppCompatActivity implements ItemClickListene
                     Thread thread = new Thread(() -> {
                         try {
                             if (hasActiveInternetConnection()) {
-                                com.hukex.punpun.AnimeActivity.this.runOnUiThread(() -> {
+                                com.example.aniverse.AnimeActivity.this.runOnUiThread(() -> {
                                     if (list == null && urlBase.equals("top/anime/"))
                                         searchAndLoadAnimes();
                                     else if (!urlBase.equals("top/anime/"))
@@ -430,7 +430,7 @@ public class AnimeActivity extends AppCompatActivity implements ItemClickListene
                                         secondApiCallScroll(animeMangaApi, urlBase);
                                 });
                             } else {
-                                com.hukex.punpun.AnimeActivity.this.runOnUiThread(this::errorConnectionToast);
+                                com.example.aniverse.AnimeActivity.this.runOnUiThread(this::errorConnectionToast);
                             }
                         } catch (Exception e) {
                             e.printStackTrace();
