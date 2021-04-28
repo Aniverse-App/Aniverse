@@ -10,4 +10,27 @@
     <string name="invalid_password" />
     <string name="score" />
     <string name="hello_blank_fragment" />
+    <string name="anime_title" />
+    <string name="manga_title" />
+    <string name="episodes_m" />
+    <string name="ranking" />
+    <string name="type" />
+    <string name="status" />
+    <string name="trailer_btn" />
+    <string name="synopsis" />
+    <string name="duration" />
+    <string name="date_aired" />
+    <string name="source" />
+    <string name="genre" />
+    <string name="studies" />
+    <string name="producers" />
+    <string name="settingsW" />
+    <string name="searchW" />
+    <string name="updated" />
+    <string name="retry" />
+    <string name="fail_connection" />
+    <string name="episodes" />
+    <string name="users" />
+    <string name="volums" />
+    <string name="authors" />
 </resources>

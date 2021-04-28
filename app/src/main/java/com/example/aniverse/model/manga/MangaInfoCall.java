@@ -2,8 +2,8 @@ package com.example.aniverse.model.manga;
 
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
-import com.hukex.punpun.model.anime.Genre;
-import com.hukex.punpun.model.anime.Related;
+import com.example.aniverse.model.anime.Genre;
+import com.example.aniverse.model.anime.Related;
 
 import java.util.List;
 

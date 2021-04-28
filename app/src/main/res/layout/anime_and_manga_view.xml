@@ -4,30 +4,31 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="?attr/backgroundOwn"
+    android:background="@drawable/heartsprite"
     android:padding="2dp">
 
+    <!--7, 17 24 31 58 61 71 81 91 104 108-->
 
     <androidx.cardview.widget.CardView
         android:id="@+id/photoAnimeParent"
         android:layout_width="wrap_content"
         android:layout_height="280dp"
         android:layout_margin="2dp"
-        android:background="?attr/backgroundOwn"
+        android:background="@drawable/circle"
         app:cardCornerRadius="8dp">
 
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:elevation="1dp"
-            android:src="@drawable/ic_favorite"
+            android:src="@drawable/eren"
             android:visibility="gone" />
 
         <ImageView
             android:id="@+id/photoAnime"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="?attr/imageViewOwn"
+            android:background="@drawable/circle"
             tools:ignore="ContentDescription"
             tools:src="@mipmap/ic_launcher" />
 
@@ -36,7 +37,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="bottom"
-            android:background="@drawable/gradient_shape" />
+            android:background="@drawable/eren" />
 
         <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
@@ -54,10 +55,10 @@
                 android:id="@+id/rank_anime"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:background="@color/teal_200"
+                android:background="@color/cardview_dark_background"
                 android:gravity="center"
                 android:padding="8dp"
-                android:textColor="@color/white99"
+                android:textColor="@color/colorPrimary"
                 tools:text="9999" />
 
             <TextView
@@ -67,7 +68,7 @@
                 android:layout_gravity="center"
                 android:background="@color/cardview_dark_background"
                 android:padding="8dp"
-                android:textColor="@color/white99"
+                android:textColor="@color/colorPrimary"
                 tools:text="TV(20)" />
 
             <ImageView
@@ -77,7 +78,7 @@
                 android:layout_gravity="end"
                 android:layout_marginTop="9dp"
                 android:layout_marginEnd="36dp"
-                android:background="@drawable/ic_start_full"
+                android:background="@drawable/eren"
                 android:elevation="2dp" />
 
             <TextView
@@ -87,7 +88,7 @@
                 android:layout_gravity="end"
                 android:background="@color/cardview_dark_background"
                 android:padding="8dp"
-                android:textColor="@color/white99"
+                android:textColor="@color/colorPrimary"
                 tools:text="9.99" />
         </androidx.cardview.widget.CardView>
 
@@ -100,11 +101,11 @@
             android:lineSpacingExtra="2dp"
             android:maxLines="2"
             android:padding="8dp"
-            android:shadowColor="@color/black"
+            android:shadowColor="@color/colorBack"
             android:shadowDx="0"
             android:shadowDy="0"
             android:shadowRadius="5"
-            android:textColor="@color/white"
+            android:textColor="@color/colorPrimary"
             tools:text="Dragon DragonDragonDragonDragonDragon ball z" />
     </androidx.cardview.widget.CardView>
 

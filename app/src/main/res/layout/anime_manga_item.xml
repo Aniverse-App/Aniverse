@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="?attr/backgroundOwn"
+    android:background="@color/colorBack"
     android:elevation="40dp"
     android:fillViewport="true">
 
@@ -20,7 +20,7 @@
             android:layout_height="200dp"
             android:layout_marginStart="16dp"
             android:layout_marginTop="16dp"
-            android:background="?attr/backgroundOwn"
+            android:background="@drawable/eren"
             app:cardCornerRadius="8dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
@@ -36,7 +36,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="bottom"
-                android:background="@drawable/gradient_shape" />
+                android:background="@drawable/eren" />
 
             <ProgressBar
                 android:id="@+id/progress_bar_circle_image_item"
@@ -53,8 +53,8 @@
             android:layout_marginTop="4dp"
             android:layout_marginEnd="4dp"
             android:background="#00ffffff"
-            android:drawableBottom="@drawable/ic_close"
-            android:drawableTint="?attr/switchSelectedOwn"
+            android:drawableBottom="@drawable/circle"
+            android:drawableTint="@color/colorAccount"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -65,7 +65,7 @@
             android:layout_marginStart="16dp"
             android:layout_marginTop="16dp"
             android:gravity="fill_horizontal"
-            android:textColor="?attr/textOwn"
+            android:textColor="@color/cardview_dark_background"
             android:textSize="20sp"
             android:textStyle="bold"
             app:layout_constraintStart_toEndOf="@+id/image_inside_parent"
@@ -88,7 +88,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/score"
-                android:textColor="?attr/switchSelectedOwn"
+                android:textColor="@color/colorBack"
                 android:textSize="15sp" />
 
             <ImageView
@@ -97,14 +97,14 @@
                 android:layout_height="20dp"
 
                 android:layout_marginStart="8dp"
-                android:src="@drawable/ic_start_full" />
+                android:src="@drawable/heartsprite" />
 
             <TextView
                 android:id="@+id/score_inside"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="2dp"
-                android:textColor="?attr/textOwn"
+                android:textColor="@color/cardview_dark_background"
                 android:textSize="15sp"
                 tools:text="9.38" />
 
@@ -114,7 +114,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_marginStart="3dp"
-                android:textColor="?attr/textOwn"
+                android:textColor="@color/colorBack"
                 android:textSize="12sp"
                 tools:text="(1.331.231 usuarios)" />
         </LinearLayout>
@@ -135,7 +135,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/episodes_m"
-                android:textColor="?attr/switchSelectedOwn"
+                android:textColor="@color/colorBack"
                 android:textSize="15sp" />
 
             <TextView
@@ -143,7 +143,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
-                android:textColor="?attr/textOwn"
+                android:textColor="@color/colorBack"
                 android:textSize="15sp"
                 tools:text="938 episodes" />
         </LinearLayout>
@@ -163,7 +163,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/ranking"
-                android:textColor="?attr/switchSelectedOwn"
+                android:textColor="@color/colorBack"
                 android:textSize="15sp" />
 
             <TextView
@@ -171,7 +171,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
-                android:textColor="?attr/textOwn"
+                android:textColor="@color/colorBack"
                 android:textSize="15sp"
                 tools:text="93" />
         </LinearLayout>
@@ -191,7 +191,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/type"
-                android:textColor="?attr/switchSelectedOwn"
+                android:textColor="@color/colorBack"
                 android:textSize="15sp" />
 
             <TextView
@@ -199,7 +199,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
-                android:textColor="?attr/textOwn"
+                android:textColor="@color/colorBack"
                 android:textSize="15sp"
                 tools:text="Movie" />
         </LinearLayout>
@@ -219,7 +219,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/status"
-                android:textColor="?attr/switchSelectedOwn"
+                android:textColor="@color/colorBack"
                 android:textSize="15sp" />
 
             <TextView
@@ -227,7 +227,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
-                android:textColor="?attr/textOwn"
+                android:textColor="@color/colorBack"
                 android:textSize="15sp"
                 tools:text="Completed" />
         </LinearLayout>
@@ -245,11 +245,11 @@
                 android:id="@+id/rating_inside"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textColor="?attr/textOwn"
+                android:textColor="@color/colorBack"
                 android:textSize="15sp"
                 tools:text="PG-13 - Teens 13 or older" />
         </LinearLayout>
-
+        <!-- 7 23 32 39 68 91 56 57 100 107 117 146 148 166 174 194 202 222 230 248 260 272 282-->
         <Button
             android:id="@+id/trailer_button"
             android:layout_width="wrap_content"
@@ -257,7 +257,7 @@
             android:layout_marginTop="16dp"
             android:background="#00ffffff"
             android:text="@string/trailer_btn"
-            android:textColor="?attr/textOwn"
+            android:textColor="@color/colorBack"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/image_inside_parent"
             app:layout_constraintTop_toBottomOf="@+id/linearLayout8" />
@@ -269,7 +269,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
             android:text="@string/synopsis"
-            android:textColor="?attr/switchSelectedOwn"
+            android:textColor="@color/colorBack"
             android:textSize="15sp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/trailer_button" />
@@ -279,7 +279,7 @@
             android:layout_width="350dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="4dp"
-            android:textColor="?attr/textOwn"
+            android:textColor="@color/colorBack"
             android:textSize="15sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -302,7 +302,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/duration"
-                android:textColor="?attr/switchSelectedOwn"
+                android:textColor="@color/colorBack"
                 android:textSize="15sp" />
 
             <TextView
@@ -310,7 +310,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
-                android:textColor="?attr/textOwn"
+                android:textColor="@color/colorBack"
                 android:textSize="15sp"
                 tools:text="24 min per ep" />
         </LinearLayout>
@@ -330,7 +330,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/date_aired"
-                android:textColor="?attr/switchSelectedOwn"
+                android:textColor="@color/colorBack"
                 android:textSize="15sp" />
 
             <TextView
@@ -338,7 +338,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
-                android:textColor="?attr/textOwn"
+                android:textColor="@color/colorBack"
                 android:textSize="15sp"
                 tools:text="Apr 6, 2011 to Sep 14, 2011" />
         </LinearLayout>
@@ -358,7 +358,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/source"
-                android:textColor="?attr/switchSelectedOwn"
+                android:textColor="@color/colorBack"
                 android:textSize="15sp" />
 
             <TextView
@@ -366,7 +366,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
-                android:textColor="?attr/textOwn"
+                android:textColor="@color/colorBack"
                 android:textSize="15sp"
                 tools:text="Visual novel" />
         </LinearLayout>
@@ -385,7 +385,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/genre"
-                android:textColor="?attr/switchSelectedOwn"
+                android:textColor="@color/colorBack"
                 android:textSize="15sp" />
 
             <TextView
@@ -393,7 +393,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
-                android:textColor="?attr/textOwn"
+                android:textColor="@color/colorBack"
                 android:textSize="15sp"
                 tools:text="Sci-Fi,Action" />
         </LinearLayout>
@@ -413,7 +413,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/studies"
-                android:textColor="?attr/switchSelectedOwn"
+                android:textColor="@color/colorBack"
                 android:textSize="15sp" />
 
             <TextView
@@ -421,12 +421,12 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
-                android:textColor="?attr/textOwn"
+                android:textColor="@color/colorBack"
                 android:textSize="15sp"
                 tools:text="Bones" />
         </LinearLayout>
 
-
+        <!-- 7 23 32 39 68 91 56 57 100 107 117 146 148 166 174 194 202 222 230 248 260 272 282 305 313 333 341 361 369 388 396 416 424 445 453-->
         <LinearLayout
             android:id="@+id/linearLayout9"
             android:layout_width="370dp"
@@ -442,7 +442,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/producers"
-                android:textColor="?attr/switchSelectedOwn"
+                android:textColor="@color/colorBack"
                 android:textSize="15sp" />
 
             <TextView
@@ -450,7 +450,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
-                android:textColor="?attr/textOwn"
+                android:textColor="@color/colorBack"
                 android:textSize="15sp"
                 tools:text="Bones,Bones,Bones" />
         </LinearLayout>

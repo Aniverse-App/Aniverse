@@ -2,7 +2,7 @@ package com.example.aniverse.model.manga;
 
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
-import com.hukex.punpun.model.anime.Prop;
+import com.example.aniverse.model.anime.Prop;
 
 import lombok.Data;
 

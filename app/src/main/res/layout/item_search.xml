@@ -14,11 +14,11 @@
         android:layout_height="wrap_content"
         android:paddingTop="6dp"
         android:textAppearance="?attr/textAppearanceListItem"
-        android:textColor="@color/white99"
+        android:textColor="@color/cardview_dark_background"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:text="Dragon Ball" />
-
+    <!--17 29-->
     <TextView
         android:id="@+id/text2"
         android:layout_width="wrap_content"
@@ -26,7 +26,7 @@
         android:layout_marginTop="2dp"
         android:paddingBottom="6dp"
         android:textAppearance="?attr/textAppearanceListItemSecondary"
-        android:textColor="@color/purple_main"
+        android:textColor="@color/cardview_light_background"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/text1"
