@@ -1,163 +1,80 @@
 package com.example.aniverse.fragments;
 
-import android.app.Activity;
-import android.content.Intent;
-import android.net.Uri;
+
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
-import android.widget.ImageView;
-import android.widget.ProgressBar;
-import android.widget.TextView;
 
+import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
-import com.bumptech.glide.load.DataSource;
-import com.bumptech.glide.load.engine.GlideException;
-import com.bumptech.glide.request.RequestListener;
-import com.bumptech.glide.request.target.Target;
-import com.example.aniverse.utils.GlideApp;
-import com.google.android.material.bottomnavigation.BottomNavigationView;
-import com.example.aniverse.AnimeActivity;
+
+import com.example.aniverse.PostsAdapter;
+import com.example.aniverse.login.Post;
+
 import com.example.aniverse.R;
-import com.example.aniverse.model.anime.AnimeInfoCall;
-import com.example.aniverse.model.anime.AnimeTop;
-import com.example.aniverse.model.anime.Genre;
-import com.example.aniverse.model.anime.Producer;
-import com.example.aniverse.model.anime.Studio;
-import com.example.aniverse.utils.CustomGlideModule;
+
+import com.parse.FindCallback;
+import com.parse.ParseException;
+import com.parse.ParseQuery;
+
+import java.util.ArrayList;
+import java.util.List;
 
 
 public class AnimeFragment extends Fragment {
-
-    private AnimeInfoCall animeInfoCall;
-    private AnimeTop anime;
-
+    public static final String TAG = "AnimeFragment";
+    private RecyclerView rvAnime;
+    protected PostsAdapter adapter;
+    protected List<Post> allPosts;
 
     public AnimeFragment() {
-    }
-
-    public AnimeFragment(AnimeTop anime, AnimeInfoCall animeInfoCall) {
-        this.anime = anime;
-        this.animeInfoCall = animeInfoCall;
-
-    }
-
-    public static AnimeFragment newInstance(AnimeTop anime, AnimeInfoCall animeInfoCall) {
-        AnimeFragment fragment = new AnimeFragment(anime, animeInfoCall);
-        return fragment;
-    }
-
-    @Nullable
-    @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-
-
-        return inflater.inflate(R.layout.anime_manga_item, container, false);
+        // Required empty public constructor
     }
 
     @Override
-    public void onDetach() {
-        AnimeActivity.call1 = null;
-        BottomNavigationView bottomNavigationViewWallpaper = ((Activity) getContext()).findViewById(R.id.bottomWallpaperBar);
-        bottomNavigationViewWallpaper.setVisibility(View.VISIBLE);
-        super.onDetach();
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState) {
+        // Inflate the layout for this fragment
+        return inflater.inflate(R.layout.fragment_anime, container, false);
     }
 
     @Override
-    public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState){
         super.onViewCreated(view, savedInstanceState);
+        rvAnime = view.findViewById(R.id.rvAnime);
 
-        View parentItem = (View) view.getParent();
-        BottomNavigationView bottomNavigationViewWallpaper = parentItem.findViewById(R.id.bottomWallpaperBar);
-       // bottomNavigationViewWallpaper.setVisibility(View.GONE);
+        allPosts = new ArrayList<>();
+        adapter = new PostsAdapter(getContext(), allPosts);
 
-        ProgressBar progressBar;
-        progressBar = view.findViewById(R.id.progress_bar_circle_image_item);
-        ImageView imageView = view.findViewById(R.id.image_inside);
-        GlideApp.with(view.getContext()).asBitmap()
-                .load(anime.getImageUrl()).centerCrop().listener(new RequestListener() {
-            @Override
-            public boolean onLoadFailed(@Nullable GlideException e, Object model, Target target, boolean isFirstResource) {
-                return false;
-            }
+        rvAnime.setAdapter(adapter);
+        rvAnime.setLayoutManager(new LinearLayoutManager(getContext()));
 
-            @Override
-            public boolean onResourceReady(Object resource, Object model, Target target, DataSource dataSource, boolean isFirstResource) {
-                progressBar.setVisibility(View.GONE);
-                return false;
-            }
-        }).into(imageView);
-        TextView title = view.findViewById(R.id.title_inside);
-        title.setText(anime.getTitle());
-        TextView score = view.findViewById(R.id.score_inside);
-        score.setText(String.valueOf(anime.getScore()));
-        ImageView start = view.findViewById(R.id.star_inside);
-        if (anime.getScore() >= 4 && anime.getScore() <= 6) {
-            start.setImageResource(R.drawable.appicon);
-        } else if (anime.getScore() < 3) {
-            start.setImageResource(R.drawable.eren);
-        }
-        //change 100 102
-        TextView members = view.findViewById(R.id.members_inside);
-        members.setText("(" + animeInfoCall.getScoredBy() + " " + getString(R.string.users) + ")");
-        Button closeButton = view.findViewById(R.id.close_button);
-        closeButton.setOnClickListener(v -> getParentFragmentManager().popBackStack());
-        TextView episodes = view.findViewById(R.id.episodes_inside);
-        episodes.setText(anime.getEpisodes() + " " + getString(R.string.episodes));
-        TextView rank = view.findViewById(R.id.rank_inside);
-        rank.setText(String.valueOf(anime.getRank()));
-        TextView type = view.findViewById(R.id.type_inside);
-        type.setText(anime.getType());
-        TextView status = view.findViewById(R.id.status_inside);
-        status.setText(animeInfoCall.getStatus());
-
-        TextView rating = view.findViewById(R.id.rating_inside);
-        rating.setText(animeInfoCall.getRating());
-
-        TextView synopsis = view.findViewById(R.id.synopsis_inside);
-        synopsis.setText(animeInfoCall.getSynopsis());
-
-        TextView duration = view.findViewById(R.id.duration_inside);
-        duration.setText(animeInfoCall.getDuration());
-
-
-        TextView aired_date = view.findViewById(R.id.aired_inside);
-        aired_date.setText(animeInfoCall.getAired().getString());
-        Button trailerButton = view.findViewById(R.id.trailer_button);
-        trailerButton.setOnClickListener(v -> startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse(animeInfoCall.getTrailerUrl()))));
-
-        TextView source = view.findViewById(R.id.source_inside);
-        source.setText(animeInfoCall.getSource());
-
-        TextView genre = view.findViewById(R.id.genre_inside);
-        int n = animeInfoCall.getGenres().size(), count = 1;
-        for (Genre animeInfoCallGenre : animeInfoCall.getGenres()) {
-            genre.append(animeInfoCallGenre.name);
-            if (n > count++) genre.append(",");
-
-        }
-
-
-        TextView studios = view.findViewById(R.id.studios_inside);
-        int ns = animeInfoCall.getStudios().size(), counts = 1;
-        for (Studio animeInfoCallStudio : animeInfoCall.getStudios()) {
-            studios.append(animeInfoCallStudio.name);
-            if (ns > counts++) studios.append(",");
-
-        }
-
-        TextView producers = view.findViewById(R.id.producers_inside);
-        int np = animeInfoCall.getProducers().size(), countp = 1;
-        for (Producer animeInfoCallProducer : animeInfoCall.getProducers()) {
-            producers.append(animeInfoCallProducer.name);
-            if (np > countp++) producers.append(",");
-
-        }
-
+        queryPosts();
     }
 
-}
+    protected void queryPosts() {
+        ParseQuery<Post> query = ParseQuery.getQuery(Post.class);
+        query.include(Post.KEY_USER);
+        query.setLimit(20);
+        query.addDescendingOrder(Post.KEY_CREATED_KEY);
+        query.findInBackground(new FindCallback<Post>() {
+            @Override
+            public void done(List<Post> posts, ParseException e) {
+                if (e != null) {
+                    Log.e(TAG, "Issue with getting post", e);
+                    return;
+                }
+                for (Post post : posts) {
+                    Log.i(TAG, "Post" + post.getPost());
+                }
+                allPosts.addAll(posts);
+                adapter.notifyDataSetChanged();
+            }
+        });
+    }}
