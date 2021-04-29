@@ -1,36 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:android="http://schemas.android.com/apk/res/android">
-    <!--
+
      <item
          android:id="@+id/action_anime"
-         android:icon="@drawable/dragonball"
+         android:icon="@drawable/ic_anime"
          android:title="Anime"
          app:showAsAction="always" />
-         -->
      <item
          android:id="@+id/action_manga"
-         android:icon="@drawable/manga"
+         android:icon="@drawable/ic_manga"
          android:title="Manga"
          app:showAsAction="always" />
      <item
          android:id="@+id/action_character"
-         android:icon="@drawable/natsu"
+         android:icon="@drawable/ic_character"
          android:title="Character"
          app:showAsAction="always" />
      <item
          android:id="@+id/action_discussion"
-         android:icon="@drawable/discussion"
+         android:icon="@drawable/ic_discussion"
          android:title="Discussion"
          app:showAsAction="always" />
      <item
-         android:id="@+id/action_search"
-         android:icon="@drawable/search"
-         android:title="Search"
-         app:showAsAction="always" />
-     <item
          android:id="@+id/action_profile"
-         android:icon="@drawable/profile"
+         android:icon="@drawable/user"
          android:title="Profile"
          app:showAsAction="always" />
  </menu>
