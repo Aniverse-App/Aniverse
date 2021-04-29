@@ -105,7 +105,8 @@ public class AnimeActivity extends AppCompatActivity implements ItemClickListene
 
 
         progressBarCenter = findViewById(R.id.progress_bar_center);
-        progressBarCenter.setIndeterminateDrawable(doubleBounce);
+        // DONT  think we need this. I change the xml file so we dont need it.
+        //progressBarCenter.setIndeterminateDrawable(doubleBounce);
         autofitRecyclerViewAnimeManga = findViewById(R.id.autofitRecyclerViewAnime);
         swipeRefreshLayout = findViewById(R.id.swipeResfreshWallpaper);
         swipeRefreshLayout.setOnRefreshListener(() -> {
@@ -272,7 +273,7 @@ public class AnimeActivity extends AppCompatActivity implements ItemClickListene
             TypedValue typedValue = new TypedValue();
             this.getTheme().resolveAttribute(R.attr.backgroundOwn, typedValue, true);
             @ColorInt int color = typedValue.data;
-            ValueAnimator colorAnimation = ValueAnimator.ofObject(new ArgbEvaluator(), ContextCompat.getColor(com.example.aniverse.AnimeActivity.this, R.color.colorBack) //change 275
+            ValueAnimator colorAnimation = ValueAnimator.ofObject(new ArgbEvaluator(), ContextCompat.getColor(AnimeActivity.this, R.color.colorBack) //change 275
                     , color);
             colorAnimation.setDuration(600); // milliseconds
             colorAnimation.addUpdateListener(animator -> {

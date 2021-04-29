@@ -4,4 +4,6 @@
     <item name="bar_wallpaper" type="id" />
     <item name="bar_manga" type="id" />
     <item name="bar_anime" type="id" />
+    <item name="progress_bar_center" type="id" />
+    <item name="action_anime" type="id" />
 </resources>
