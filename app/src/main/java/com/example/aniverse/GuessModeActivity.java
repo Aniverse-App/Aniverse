@@ -1,7 +1,6 @@
 package com.example.aniverse;
 
 import android.annotation.SuppressLint;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -13,7 +12,6 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.aniverse.login.MainActivity;
@@ -40,19 +38,6 @@ public class GuessModeActivity extends AppCompatActivity {
     String randomizedQuestion;
     SharedPreferences saveHighscore;
 
-    @Override
-    public void onBackPressed() {
-        new AlertDialog.Builder(this)
-                .setTitle("Really Exit?")
-                .setMessage("Are you sure you want to exit?")
-                .setNegativeButton(android.R.string.no, null)
-                .setPositiveButton(android.R.string.yes, new DialogInterface.OnClickListener() {
-
-                    public void onClick(DialogInterface arg0, int arg1) {
-                        GuessModeActivity.super.onBackPressed();
-                    }
-                }).create().show();
-    }
 
     //The functions below initialize our 8 arrays of questions
     void initializeLuffyQuestions(){

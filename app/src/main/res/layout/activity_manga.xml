@@ -68,7 +68,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom"
-        android:background="@drawable/heartsprite"
+
         app:itemIconTint="@color/colorAccount"
         app:itemTextColor="@color/cardview_dark_background"
         app:labelVisibilityMode="labeled"
@@ -88,7 +88,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
-    <com.github.ybq.android.spinkit.SpinKitView
+   <!-- <com.github.ybq.android.spinkit.SpinKitView
         android:id="@+id/progress_bar_center"
         style="@style/SpinKitView.Large.Circle"
         android:layout_width="40dp"
@@ -98,7 +98,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent" />-->
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

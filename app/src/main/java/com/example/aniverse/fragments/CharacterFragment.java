@@ -79,13 +79,6 @@ public class CharacterFragment extends Fragment {
         loadImageBackground();
 
         //Guess mode where character gets asked QuestionsActivity and he has to find out the appropriate character
-        /* normalMode.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View view){
-                intent=new Intent(getApplicationContext(), QuestionsActivity.class);
-                startActivity(intent);
-            }
-        }); */
 
         guessMode.setOnClickListener(new View.OnClickListener(){
             @Override
