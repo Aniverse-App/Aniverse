@@ -6,5 +6,9 @@
     <color name="colorPrimaryLargerDark">#8a56ab</color>
     <color name="colorBack">#80ab</color>
     <color name="colorTitle">#362742</color>
+    <color name="activityBackground">#282828</color>
     <color name="colorSubTitle">#c5c9cf</color>
+    <color name="colorAccent">#FF4081</color>
+    <color name="textColor">#FFFFFF</color>
+    <color name="dividerColor">#8c8c8c</color>
 </resources>

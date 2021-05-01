@@ -2,19 +2,19 @@ package com.example.aniverse.animetv;
 
 import android.net.Uri;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.MediaController;
 import android.widget.ProgressBar;
 import android.widget.VideoView;
-
+import androidx.appcompat.app.AppCompatActivity;
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
-import com.scraper.SiteTools;
+import com.example.aniverse.R;
+import com.example.aniverse.scraper.SiteTools;
 
 public class VideoViewer extends AppCompatActivity {
     private String url ="http://st3.anime1.com/Darling in the FranXX Episode 15.mp4?st=5hjUoXuMBfTplZ49TKn8oQ&e=1529135685";

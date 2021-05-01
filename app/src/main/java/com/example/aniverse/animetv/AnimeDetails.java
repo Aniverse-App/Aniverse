@@ -3,14 +3,13 @@ package com.example.aniverse.animetv;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
-
+import androidx.appcompat.app.AppCompatActivity;
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
@@ -18,7 +17,7 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.example.aniverse.R;
-import com.scraper.Anime;
+import com.example.aniverse.scraper.Anime;
 import com.squareup.picasso.Picasso;
 
 public class AnimeDetails extends AppCompatActivity {
@@ -50,7 +49,6 @@ public class AnimeDetails extends AppCompatActivity {
         animeCover=findViewById(R.id.animeCover);
         episodeButton=findViewById(R.id.episodeButton);
         progressBar=findViewById(R.id.progressBar);
-
         progressBar.setVisibility(View.VISIBLE);
         animeDescription.setVisibility(View.INVISIBLE);
         animeCover.setVisibility(View.INVISIBLE);

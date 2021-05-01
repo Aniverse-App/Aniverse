@@ -2,12 +2,12 @@ package com.example.aniverse.animetv;
 
 
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.View;
 import android.widget.ProgressBar;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
@@ -15,7 +15,8 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
-import com.scraper.Anime;
+import com.example.aniverse.R;
+import com.example.aniverse.scraper.Anime;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -60,7 +61,7 @@ public class EpisodeList extends AppCompatActivity {
             @Override
             public void onResponse(String response) {
                 Log.d(TAG,"Got Response");
-                Anime anime=new Anime(response.toString());
+                Anime anime = new Anime(response.toString());
                 episodeList.addAll(anime.getAnimeEpisodeList());
                 progressBar.setVisibility(View.INVISIBLE);
                 recyclerViewAdapter.notifyItemRangeInserted(0,episodeList.size());
