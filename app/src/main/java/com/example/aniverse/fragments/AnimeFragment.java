@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
@@ -90,16 +91,16 @@ public class AnimeFragment extends Fragment {
     }
 
     @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
+    public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_search_bar, menu);
+        inflater.inflate(R.menu.menu_search_bar, menu);
+        super.onCreateOptionsMenu(menu, inflater);
         // Associate searchable configuration with the SearchView
         SearchManager searchManager =
-                (SearchManager) getSystemService(Context.SEARCH_SERVICE);
+                (SearchManager) getActivity().getSystemService(Context.SEARCH_SERVICE);
         MenuItem searchItem = menu.findItem(R.id.menuSearch);
         SearchView searchView = (SearchView) searchItem.getActionView();
         searchView.setSearchableInfo(searchManager.getSearchableInfo(new ComponentName(getContext(), SearchActivity.class)));
-        return true;
     }
 }
 
