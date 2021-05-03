@@ -10,13 +10,14 @@
     <TextView
         android:id="@+id/animeTitle"
         android:layout_width="match_parent"
-        android:layout_height="47dp"
+        android:layout_height="wrap_content"
+        android:background="#FFFFFF"
+        android:ellipsize="end"
+        android:maxLines="1"
         android:padding="10dp"
         android:text="TextView"
-        android:textColor="@color/textColor"
+        android:textColor="@android:color/black"
         android:textSize="12sp"
-        android:maxLines="1"
-        android:ellipsize="end"
         tools:layout_editor_absoluteX="-38dp"
         tools:layout_editor_absoluteY="-5dp" />
 
