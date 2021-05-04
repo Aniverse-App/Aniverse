@@ -36,7 +36,6 @@ public class EditProfileActivity extends AppCompatActivity {
         setContentView(R.layout.activity_edit_profile);
         String TAG = "EditProfileActivity";
         EditText etProfileUser;
-        EditText etProfileBio;
         Button buttonSaveProfile;
         ProgressBar pbSaveChanges;
 
@@ -44,6 +43,7 @@ public class EditProfileActivity extends AppCompatActivity {
         etProfileUser = findViewById(R.id.etProfileUser);
         buttonSaveProfile = findViewById(R.id.buttonSaveChanges);
         pbSaveChanges = findViewById(R.id.pbSaveChanges);
+
 
         buttonSaveProfile.setOnClickListener(new View.OnClickListener() {
             @Override

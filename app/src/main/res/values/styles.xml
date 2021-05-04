@@ -16,4 +16,14 @@
         <item name="android:background">@color/dividerColor</item>
     </style>
 
+    <style name="CircleImageStyle" parent="">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">50%</item>
+    </style>
+
+
+    <style name="CollapsedExpandedTitleText" parent="AppTheme">
+        <item name="android:textColor">@android:color/transparent</item>
+    </style>
+
 </resources>

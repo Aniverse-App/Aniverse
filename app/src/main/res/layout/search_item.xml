@@ -11,7 +11,7 @@
         android:id="@+id/animeTitle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="#FFFFFF"
+        android:background="#00BCD4"
         android:ellipsize="end"
         android:maxLines="1"
         android:padding="10dp"
@@ -19,7 +19,8 @@
         android:textColor="@android:color/black"
         android:textSize="12sp"
         tools:layout_editor_absoluteX="-38dp"
-        tools:layout_editor_absoluteY="-5dp" />
+        tools:layout_editor_absoluteY="-5dp"
+        tools:ignore="MissingConstraints" />
 
     <View
         android:id="@+id/view"

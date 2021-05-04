@@ -1,12 +1,12 @@
 package com.example.aniverse;
 
-public class characters {
+public class Characters {
 
     private String characterName;
     private String anime;
     private int characterIcon;
 
-    public characters(String name, String animeName, int imageId) {
+    public Characters(String name, String animeName, int imageId) {
         characterName = name;
         anime = animeName;
         characterIcon = imageId;

@@ -103,7 +103,7 @@
         android:textSize="30sp"
         android:layout_margin="10dp"/>
 
-    <!--In this layout I will have the anime characters as multiple choice-->
+    <!--In this layout I will have the anime Characters as multiple choice-->
     <LinearLayout
         android:layout_centerHorizontal="true"
         android:visibility="visible"

@@ -34,6 +34,10 @@ public class CharacterFragment extends Fragment {
     ArrayList<Integer> backgroundImages = new ArrayList<>();
     ImageView backgroundImage;
 
+    public CharacterFragment() {
+        // Required empty public constructor
+    }
+
     void loadImageBackground() {
         //Let's load the different images into the arraylist
         backgroundImages.add(R.drawable.eren);
@@ -51,9 +55,6 @@ public class CharacterFragment extends Fragment {
 
     }
 
-    public CharacterFragment() {
-        // Required empty public constructor
-    }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -87,7 +88,7 @@ public class CharacterFragment extends Fragment {
                 startActivity(intent);
             }
         });
-        //this button let users read info about anime characters
+        //this button let users read info about anime Characters
      /*  characterInfos.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

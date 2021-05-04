@@ -12,6 +12,10 @@ import java.util.List;
 
 public class ProfileFragment extends DiscussionFragment {
 
+    public ProfileFragment() {
+        // Required empty public constructor
+    }
+
     @Override
     protected void queryPosts() {
         ParseQuery<Post> query = ParseQuery.getQuery(Post.class);

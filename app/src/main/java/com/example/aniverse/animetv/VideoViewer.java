@@ -1,5 +1,4 @@
 package com.example.aniverse.animetv;
-
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
@@ -36,16 +35,12 @@ public class VideoViewer extends AppCompatActivity {
             //This case causes errors.
         }
 
-
-        
         video = (VideoView) findViewById(R.id.videoView);
         video.setVisibility(View.INVISIBLE);
         ctlr = new MediaController(this);
         ctlr.setVisibility(View.INVISIBLE);
         progressBar= findViewById(R.id.progressBar);
         progressBar.setVisibility(View.VISIBLE);
-
-
 
         requestQueue= Volley.newRequestQueue(this);
         stringRequest=new StringRequest(Request.Method.GET, url, new Response.Listener<String>() {

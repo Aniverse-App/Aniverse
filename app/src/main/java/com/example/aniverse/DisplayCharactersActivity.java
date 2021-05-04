@@ -22,17 +22,17 @@ public class DisplayCharactersActivity extends AppCompatActivity {
         //Binding ListView with ListView of XML
         ListView characterListView = (ListView)findViewById(R.id.characterListView);
 
-        //First we populate our array list of characters
+        //First we populate our array list of Characters
         //A character has a name, an animeName and a picture.
-        ArrayList<characters> charactersList = new ArrayList<>();
-        charactersList.add(new characters("Monkey D.Luffy", "One Piece", R.drawable.luffyicon));
-        charactersList.add(new characters("Roronoa Zoro", "One Piece", R.drawable.zoroicon));
-        charactersList.add(new characters("Usopp", "One Piece", R.drawable.usopplistview));
-        charactersList.add(new characters("Vinsmoke Sanji", "One Piece", R.drawable.sanji));
-        charactersList.add(new characters("Uzumaki Naruto", "Naruto", R.drawable.narutoicon));
-        charactersList.add(new characters("Uchiha Sasuke", "Naruto", R.drawable.sasukeicon1));
-        charactersList.add(new characters("Kaneki Ken", "Tokyo Ghoul", R.drawable.kanekiicon1));
-        charactersList.add(new characters("Eren Yaegar", "Attack On Titan", R.drawable.eren));
+        ArrayList<Characters> charactersList = new ArrayList<>();
+        charactersList.add(new Characters("Monkey D.Luffy", "One Piece", R.drawable.luffyicon));
+        charactersList.add(new Characters("Roronoa Zoro", "One Piece", R.drawable.zoroicon));
+        charactersList.add(new Characters("Usopp", "One Piece", R.drawable.usopplistview));
+        charactersList.add(new Characters("Vinsmoke Sanji", "One Piece", R.drawable.sanji));
+        charactersList.add(new Characters("Uzumaki Naruto", "Naruto", R.drawable.narutoicon));
+        charactersList.add(new Characters("Uchiha Sasuke", "Naruto", R.drawable.sasukeicon1));
+        charactersList.add(new Characters("Kaneki Ken", "Tokyo Ghoul", R.drawable.kanekiicon1));
+        charactersList.add(new Characters("Eren Yaegar", "Attack On Titan", R.drawable.eren));
 
         //After populating our array list we connect it to our adapter
         animeListViewAdapter adapter = new animeListViewAdapter(this, charactersList);

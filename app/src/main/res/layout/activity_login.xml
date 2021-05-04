@@ -9,7 +9,6 @@
     tools:context="com.example.aniverse.login.MainActivity">
 
     <TextView
-
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_weight="1"
@@ -24,7 +23,7 @@
         android:layout_height="wrap_content"
         android:layout_weight="1"
         android:ems="10"
-        android:hint="username" />
+        android:hint="@string/prompt_email" />
 
     <EditText
         android:id="@id/password"
@@ -32,7 +31,7 @@
         android:layout_height="wrap_content"
         android:layout_weight="1"
         android:ems="10"
-        android:hint="password"
+        android:hint="@string/prompt_password"
         android:inputType="textPassword" />
 
     <Button

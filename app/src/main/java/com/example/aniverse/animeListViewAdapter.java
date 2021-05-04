@@ -13,8 +13,8 @@ import androidx.annotation.Nullable;
 
 import java.util.ArrayList;
 
-public class animeListViewAdapter extends ArrayAdapter<characters> {
-    public animeListViewAdapter(Activity context, ArrayList<characters> characterList){
+public class animeListViewAdapter extends ArrayAdapter<Characters> {
+    public animeListViewAdapter(Activity context, ArrayList<Characters> characterList){
         super(context, 0, characterList);
     }
     @NonNull
@@ -24,7 +24,7 @@ public class animeListViewAdapter extends ArrayAdapter<characters> {
         if(listViewItem == null){
             listViewItem = LayoutInflater.from(getContext()).inflate(R.layout.animelistview, parent,false);
         }
-        characters currentCharacter = getItem(position);
+        Characters currentCharacter = getItem(position);
 
         TextView name = (TextView)listViewItem.findViewById(R.id.characterName);
         name.setText(currentCharacter.getCharacterName());
