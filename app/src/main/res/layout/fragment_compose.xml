@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@android:color/black"
     android:orientation="vertical"
     tools:context="login.MainActivity">
 
@@ -12,8 +12,6 @@
         android:id="@+id/etDescription"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="25dp"
-        android:background="#FFFFFF"
         android:ems="10"
         android:hint="Description" />
 
@@ -21,39 +19,31 @@
         android:id="@+id/btnCaptureImage"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="25dp"
-        android:background="#2196F3"
-        android:backgroundTint="#2196F3"
-        app:icon="@drawable/ic_cameras"
-        app:iconGravity="textEnd"
-        app:iconTint="#2196F3" />
+        android:background="#FFFFFF"
+        android:text="take picture" />
 
     <ImageView
         android:id="@+id/ivPostImage"
         android:layout_width="match_parent"
         android:layout_height="200dp"
-        android:layout_margin="25dp"
         tools:srcCompat="@tools:sample/avatars" />
 
     <Button
         android:id="@+id/btnSubmit"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="25dp"
-        android:background="#2196F3"
-        android:text="Submit"
-        android:textColor="#2196F3"
-        app:iconTint="#2196F3" />
+        android:text="Submit" />
 
     <Button
         android:id="@+id/ivGallery"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="25dp"
-        android:background="#2196F3"
-        android:gravity="center|center_horizontal|center_vertical"
-        app:icon="@drawable/ic_gallery"
-        app:iconGravity="textEnd"
-        app:iconTint="#2196F3" />
+        android:text="pick from Gallery"
+        />
+    <Button
+        android:id="@+id/btnLogout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Logout" />
 
 </LinearLayout>

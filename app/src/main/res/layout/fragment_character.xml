@@ -73,9 +73,9 @@
         </LinearLayout>
 
 
-        <Button
+       <!-- <Button
             android:fontFamily="@font/zorque"
-            android:visibility="visible"
+            android:visibility="Invisible"
             android:textColor="#D8372B"
             android:background="@drawable/circle"
             android:id="@+id/quit"
@@ -85,7 +85,7 @@
             android:layout_marginBottom="40dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Quit"/>
+            android:text="Quit"/> -->
 
 
     </RelativeLayout>

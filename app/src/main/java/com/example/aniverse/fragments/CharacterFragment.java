@@ -15,6 +15,8 @@ import androidx.fragment.app.Fragment;
 
 import com.example.aniverse.R;
 import com.example.aniverse.GuessModeActivity;
+import com.example.aniverse.ui.login.LoginActivity;
+import com.parse.ParseUser;
 
 import java.util.ArrayList;
 import java.util.Random;
@@ -27,16 +29,11 @@ import static com.parse.Parse.getApplicationContext;
 public class CharacterFragment extends Fragment {
 
     public static final String TAG = "CharacterFragment";
-    Button quit;
     Button guessMode;
     Intent intent;
     LinearLayout mainMenuLayout;
     ArrayList<Integer> backgroundImages = new ArrayList<>();
     ImageView backgroundImage;
-
-    public CharacterFragment() {
-        // Required empty public constructor
-    }
 
     void loadImageBackground() {
         //Let's load the different images into the arraylist
@@ -55,6 +52,9 @@ public class CharacterFragment extends Fragment {
 
     }
 
+    public CharacterFragment() {
+        // Required empty public constructor
+    }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -70,9 +70,6 @@ public class CharacterFragment extends Fragment {
 
         //Binding variables with XML variables
         mainMenuLayout=(LinearLayout)view.findViewById(R.id.mainMenu);
-        quit = (Button) view.findViewById(R.id.quit);
-        // normalMode = (Button) view.findViewById(R.id.normalMode);
-        // characterInfos = (Button) view.findViewById(R.id.characterInfos);
         guessMode=(Button)view.findViewById(R.id.guessMode);
         backgroundImage=(ImageView)view.findViewById(R.id.backgroundImage);
 
@@ -80,27 +77,11 @@ public class CharacterFragment extends Fragment {
         loadImageBackground();
 
         //Guess mode where character gets asked QuestionsActivity and he has to find out the appropriate character
-
         guessMode.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view){
                 intent= new Intent(getApplicationContext(), GuessModeActivity.class);
                 startActivity(intent);
-            }
-        });
-        //this button let users read info about anime Characters
-     /*  characterInfos.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                intent=new Intent(getApplicationContext(), DisplayCharactersActivity.class);
-                startActivity(intent);
-            }
-        });*/
-        //Exit From App
-        quit.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                getActivity().finish();
             }
         });
 

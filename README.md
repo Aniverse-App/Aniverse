@@ -32,6 +32,17 @@ Here's a walkthrough of implemented user stories:
 
 <img src='https://i.imgur.com/sp65RBb.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
+# Sprint 4
+- [x] User must get back data when an Anime Title is Clicked on.
+- [X] User must get back data when an Manga Title is Clicked on.
+- [x] User watch Anime from the App.
+- [X] User can find a manga by the type.
+## Video Walkthrough
+Here's a walkthrough of implemented user stories:
+
+<img src='https://i.imgur.com/VA6yIl0.gif' title='Anime Screen Walkthrough' width='' alt='Video Walkthrough' />
+<img src='https://i.imgur.com/Qy64xpR.gif' title='Manga Screen Walkthrough' width='' alt='Video Walkthrough' />
+
 # Aniverse
 
 ## Table of Contents
