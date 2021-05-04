@@ -20,6 +20,7 @@ import com.example.aniverse.login.MainActivity;
 import com.parse.LogInCallback;
 import com.parse.ParseException;
 import com.parse.ParseUser;
+import com.parse.SignUpCallback;
 
 public class LoginActivity extends AppCompatActivity {
     String username;
@@ -43,6 +44,7 @@ public class LoginActivity extends AppCompatActivity {
         final EditText passwordEditText = findViewById(R.id.password);
         final Button loginButton = findViewById(R.id.login);
         final ProgressBar loadingProgressBar = findViewById(R.id.loading);
+        final Button btnSignUp = findViewById(R.id.btnSignUp);
         username = usernameEditText.getText().toString();
         password = passwordEditText.getText().toString();
         loginViewModel.getLoginFormState().observe(this, new Observer<LoginFormState>() {
@@ -85,6 +87,34 @@ public class LoginActivity extends AppCompatActivity {
                 });
             }
         });
+        btnSignUp.setOnClickListener(new View.OnClickListener() {
+            ParseUser user = new ParseUser();
+            @Override
+            public void onClick(View v) {
+                username = usernameEditText.getText().toString();
+                password = passwordEditText.getText().toString();
+                user.setUsername(username);
+                user.setPassword(password);
+                loadingProgressBar.setVisibility(View.VISIBLE);
+
+                user.signUpInBackground(new SignUpCallback() {
+                    @Override
+                    public void done(ParseException e) {
+                        if(e == null){
+                            Log.e(TAG, "issue with signing up ", e);
+                            return;
+
+                        }
+                        goMainActivity();
+                        Toast.makeText(LoginActivity.this, "Sucess", Toast.LENGTH_SHORT).show();
+
+
+                    }
+                });
+            }
+        });
+
+
     }
 
 
