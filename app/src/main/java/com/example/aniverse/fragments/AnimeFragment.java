@@ -39,7 +39,7 @@ import com.example.aniverse.scraper.SiteTools;
 import java.util.ArrayList;
 import java.util.List;
 
-public class AnimeFragment extends Fragment {
+public class  AnimeFragment extends Fragment {
     private static final String TAG = "MainActivity";
 
     private RecyclerView recyclerView;

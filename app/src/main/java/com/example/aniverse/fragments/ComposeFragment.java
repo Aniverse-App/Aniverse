@@ -23,6 +23,7 @@ import androidx.fragment.app.Fragment;
 
 import com.example.aniverse.R;
 import com.example.aniverse.login.Post;
+import com.example.aniverse.ui.login.LoginActivity;
 import com.parse.ParseException;
 import com.parse.ParseFile;
 import com.parse.ParseUser;
@@ -42,6 +43,7 @@ public class ComposeFragment extends Fragment {
     private ImageView ivPostImage;
     private Button btnSubmit;
     Button ivGallery;
+    private Button btnLogout;
     private File photoFile;
     public String photoFileName = "photo.jpg";
 
@@ -64,6 +66,7 @@ public class ComposeFragment extends Fragment {
         ivPostImage = view.findViewById(R.id.ivPostImage);
         btnSubmit = view.findViewById(R.id.btnSubmit);
         ivGallery = view.findViewById(R.id.ivGallery);
+        btnLogout = view.findViewById(R.id.btnLogout);
 
         ivGallery.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -91,6 +94,17 @@ public class ComposeFragment extends Fragment {
                 ParseUser currentUser = ParseUser.getCurrentUser();
                 savePost(description, currentUser, photoFile);
                 Log.i(TAG, currentUser.toString());
+
+            }
+        });
+        btnLogout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ParseUser.logOut();
+                ParseUser currentUser = ParseUser.getCurrentUser();
+                Intent i = new Intent(getContext(), LoginActivity.class);
+                startActivity(i);
+                getActivity().finish();
 
             }
         });
@@ -160,7 +174,6 @@ public class ComposeFragment extends Fragment {
         Log.i(TAG, "User"+ currentUser);
         Log.i(TAG, "image"+ photoFile);
         post.setImage(new ParseFile(photoFile));
-
 
 
 
